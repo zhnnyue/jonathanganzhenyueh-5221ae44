@@ -1,6 +1,6 @@
 
 import React, { useRef, useEffect, useState } from 'react';
-import { ExternalLink, Mail, Phone, Linkedin, Briefcase } from 'lucide-react';
+import { ExternalLink, Mail, Phone, Linkedin, Briefcase, Wifi, Router } from 'lucide-react';
 
 const ContactSection = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -119,15 +119,15 @@ const ContactSection = () => {
               <li className="flex">
                 <div className="min-w-8 text-cyber-blue mr-2">03.</div>
                 <div>
-                  <h4 className="font-medium">Social Engineering Testing</h4>
-                  <p className="text-sm text-gray-400">Test your team's security awareness</p>
+                  <h4 className="font-medium">Network Troubleshooting</h4>
+                  <p className="text-sm text-gray-400">Diagnose and solve complex connectivity issues</p>
                 </div>
               </li>
               <li className="flex">
                 <div className="min-w-8 text-cyber-blue mr-2">04.</div>
                 <div>
-                  <h4 className="font-medium">Security Training</h4>
-                  <p className="text-sm text-gray-400">Educate your team on best practices</p>
+                  <h4 className="font-medium">Network Security Configuration</h4>
+                  <p className="text-sm text-gray-400">Set up secure VLANs, firewalls and access controls</p>
                 </div>
               </li>
             </ul>
