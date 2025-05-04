@@ -78,24 +78,24 @@ const AboutSection = () => {
               </div>
               
               <div className="font-mono text-sm space-y-2">
-                <p className="text-cyber-blue">> whoami</p>
+                <p className="text-cyber-blue">{`> whoami`}</p>
                 <p className="ml-2">Jonathan Gan Zhen Yueh</p>
                 
-                <p className="text-cyber-blue">> cat skills.txt</p>
+                <p className="text-cyber-blue">{`> cat skills.txt`}</p>
                 <p className="ml-2">Penetration Testing</p>
                 <p className="ml-2">Social Engineering</p>
                 <p className="ml-2">Network Security</p>
                 <p className="ml-2">Threat Detection</p>
                 
-                <p className="text-cyber-blue">> experience</p>
+                <p className="text-cyber-blue">{`> experience`}</p>
                 <p className="ml-2">Condition Zebra - Security Intern</p>
                 <p className="ml-2">Concentrix–Huawei - Technical Support</p>
                 
-                <p className="text-cyber-blue">> motivation</p>
+                <p className="text-cyber-blue">{`> motivation`}</p>
                 <p className="ml-2">Finding vulnerabilities before attackers do</p>
                 
                 <p className="text-cyber-blue flex items-center">
-                  > _<span className="ml-1 h-5 w-2 bg-cyber-blue animate-text-blink"></span>
+                  {`> _`}<span className="ml-1 h-5 w-2 bg-cyber-blue animate-text-blink"></span>
                 </p>
               </div>
             </div>
