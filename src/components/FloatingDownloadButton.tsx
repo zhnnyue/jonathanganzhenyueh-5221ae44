@@ -23,7 +23,7 @@ const FloatingDownloadButton = () => {
   
   return (
     <a 
-      href="/assets/jonathan-gan-resume.pdf" 
+      href="/assets/Resume of Gan Zhen Yueh.pdf" 
       download
       className={`fixed bottom-6 right-6 z-50 bg-cyber-blue text-black font-bold rounded-full p-3 shadow-lg transition-all duration-300 hover:bg-cyber-blue/80 hover:shadow-[0_0_15px_rgba(0,91,255,0.7)] ${
         visible ? 'translate-y-0 opacity-100' : 'translate-y-12 opacity-0'
