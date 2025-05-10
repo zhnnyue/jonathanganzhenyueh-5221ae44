@@ -7,6 +7,7 @@ import WorkSection from '@/components/WorkSection';
 import ContactSection from '@/components/ContactSection';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import FloatingDownloadButton from '@/components/FloatingDownloadButton';
 
 const Index = () => {
   useEffect(() => {
@@ -38,6 +39,7 @@ const Index = () => {
       <ContactSection />
       
       <Footer />
+      <FloatingDownloadButton />
     </div>
   );
 };
