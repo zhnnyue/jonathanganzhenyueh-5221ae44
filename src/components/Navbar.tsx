@@ -25,7 +25,6 @@ const Navbar = () => {
       <div className="container mx-auto max-w-6xl px-4 flex justify-between items-center">
         <div className="flex items-center">
           <a href="#" className="text-cyber-blue font-bebas text-2xl tracking-wider hover:text-cyber-blue/80 transition-colors flex items-center gap-2">
-            <img src="/assets/logo-jg-shield.svg" alt="JG Shield" className="h-8 w-8" />
             <span><span className="text-cyber-text">JONATHAN</span>GAN</span>
           </a>
         </div>
