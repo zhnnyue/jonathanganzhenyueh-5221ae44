@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
-import { Download, FileText } from 'lucide-react';
+import { Download } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { toast } from "@/components/ui/use-toast";
 
@@ -25,56 +25,29 @@ const FloatingDownloadButton = () => {
   }, []);
   
   const handleDownload = () => {
-    try {
-      // Use a fetch request to check if the file exists before attempting to download
-      fetch('/assets/Resume of Gan Zhen Yueh.pdf')
-        .then(response => {
-          if (!response.ok) {
-            throw new Error('Resume file not found');
-          }
-          return response.blob();
-        })
-        .then(blob => {
-          // Create a blob URL and trigger download
-          const url = window.URL.createObjectURL(blob);
-          const link = document.createElement('a');
-          link.href = url;
-          link.download = 'Resume of Gan Zhen Yueh.pdf';
-          document.body.appendChild(link);
-          link.click();
-          
-          // Clean up
-          window.URL.revokeObjectURL(url);
-          document.body.removeChild(link);
-          
-          toast({
-            title: "Download started",
-            description: "Your download should begin shortly."
-          });
-        })
-        .catch(error => {
-          console.error('Download error:', error);
-          toast({
-            variant: "destructive",
-            title: "Download failed",
-            description: "Could not download the resume. Please try again later."
-          });
-        });
-    } catch (error) {
-      console.error('Download error:', error);
-      toast({
-        variant: "destructive",
-        title: "Download failed",
-        description: "Could not download the resume. Please try again later."
-      });
-    }
+    // Create a direct link to the PDF file
+    const link = document.createElement('a');
+    link.href = '/assets/Resume of Gan Zhen Yueh.pdf';
+    link.download = 'Resume of Gan Zhen Yueh.pdf';
+    
+    // Append to the document and trigger click
+    document.body.appendChild(link);
+    link.click();
+    
+    // Clean up
+    document.body.removeChild(link);
+    
+    toast({
+      title: "Download started",
+      description: "Your resume download has started."
+    });
   };
   
   return (
     <Button 
       variant="outline"
       onClick={handleDownload}
-      className={`fixed bottom-6 right-6 z-50 bg-transparent border border-cyber-blue text-cyber-blue font-bold p-3 cyber-angular-button shadow-lg transition-all duration-300 
+      className={`fixed bottom-6 right-6 z-50 bg-transparent border border-cyber-blue text-cyber-blue font-bold p-3 shadow-lg transition-all duration-300 
       ${visible ? 'translate-y-0 opacity-100' : 'translate-y-12 opacity-0'}
       hover:bg-cyber-blue hover:text-black hover:shadow-[0_0_20px_rgba(0,91,255,0.9)]`}
       aria-label="Download Resume"

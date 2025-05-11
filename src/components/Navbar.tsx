@@ -36,7 +36,7 @@ const Navbar = () => {
           <a href="#contact" className="hover:text-cyber-blue transition-colors">Contact</a>
           <a 
             href="mailto:jonathanganzhenyueh@gmail.com" 
-            className="cyber-angular-button bg-transparent text-cyber-blue px-4 py-2 hover:bg-cyber-blue hover:text-black transition-colors"
+            className="inline-block border border-cyber-blue text-cyber-blue px-4 py-2 hover:bg-cyber-blue hover:text-black transition-colors"
           >
             Hire Me
           </a>
@@ -88,7 +88,7 @@ const Navbar = () => {
         </a>
         <a 
           href="mailto:jonathanganzhenyueh@gmail.com" 
-          className="mt-4 cyber-angular-button bg-transparent text-cyber-blue px-6 py-2 hover:bg-cyber-blue hover:text-black transition-colors"
+          className="mt-4 inline-block border border-cyber-blue text-cyber-blue px-6 py-2 hover:bg-cyber-blue hover:text-black transition-colors"
           onClick={() => setMobileMenuOpen(false)}
         >
           Hire Me
