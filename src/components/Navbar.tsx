@@ -24,8 +24,9 @@ const Navbar = () => {
     >
       <div className="container mx-auto max-w-6xl px-4 flex justify-between items-center">
         <div className="flex items-center">
-          <a href="#" className="text-cyber-blue font-bebas text-2xl tracking-wider hover:text-cyber-blue/80 transition-colors">
-            <span className="text-cyber-text">JONATHAN</span>GAN
+          <a href="#" className="text-cyber-blue font-bebas text-2xl tracking-wider hover:text-cyber-blue/80 transition-colors flex items-center gap-2">
+            <img src="/assets/logo-jg-shield.svg" alt="JG Shield" className="h-8 w-8" />
+            <span><span className="text-cyber-text">JONATHAN</span>GAN</span>
           </a>
         </div>
         
@@ -36,7 +37,7 @@ const Navbar = () => {
           <a href="#contact" className="hover:text-cyber-blue transition-colors">Contact</a>
           <a 
             href="mailto:jonathanganzhenyueh@gmail.com" 
-            className="bg-transparent border border-cyber-blue text-cyber-blue px-4 py-2 rounded hover:bg-cyber-blue hover:text-black transition-colors"
+            className="cyber-angular-button bg-transparent text-cyber-blue px-4 py-2 hover:bg-cyber-blue hover:text-black transition-colors"
           >
             Hire Me
           </a>
@@ -88,7 +89,7 @@ const Navbar = () => {
         </a>
         <a 
           href="mailto:jonathanganzhenyueh@gmail.com" 
-          className="mt-4 bg-transparent border border-cyber-blue text-cyber-blue px-6 py-2 rounded hover:bg-cyber-blue hover:text-black transition-colors"
+          className="mt-4 cyber-angular-button bg-transparent text-cyber-blue px-6 py-2 hover:bg-cyber-blue hover:text-black transition-colors"
           onClick={() => setMobileMenuOpen(false)}
         >
           Hire Me
