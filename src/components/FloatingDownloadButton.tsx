@@ -25,21 +25,12 @@ const FloatingDownloadButton = () => {
   }, []);
   
   const handleDownload = () => {
-    // Create a direct link to the PDF file
-    const link = document.createElement('a');
-    link.href = '/assets/Resume of Gan Zhen Yueh.pdf';
-    link.download = 'Resume of Gan Zhen Yueh.pdf';
-    
-    // Append to the document and trigger click
-    document.body.appendChild(link);
-    link.click();
-    
-    // Clean up
-    document.body.removeChild(link);
+    // Use window.open for direct download to avoid "interrupt:no file" error
+    window.open('/assets/Resume of Gan Zhen Yueh.pdf', '_blank');
     
     toast({
-      title: "Download started",
-      description: "Your resume download has started."
+      title: "Download initiated",
+      description: "Your resume should open in a new tab."
     });
   };
   
