@@ -1,7 +1,8 @@
 
 import React, { useState, useEffect } from 'react';
-import { Download } from 'lucide-react';
+import { Download, FileText } from 'lucide-react';
 import { Button } from "@/components/ui/button";
+import { toast } from "@/components/ui/use-toast";
 
 const FloatingDownloadButton = () => {
   const [visible, setVisible] = useState(false);
@@ -23,16 +24,50 @@ const FloatingDownloadButton = () => {
     };
   }, []);
   
-  const handleDownload = (e) => {
-    e.preventDefault();
-    
-    // Create a direct link to the PDF and trigger download
-    const link = document.createElement('a');
-    link.href = '/assets/Resume of Gan Zhen Yueh.pdf';
-    link.download = 'Resume of Gan Zhen Yueh.pdf';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+  const handleDownload = () => {
+    try {
+      // Use a fetch request to check if the file exists before attempting to download
+      fetch('/assets/Resume of Gan Zhen Yueh.pdf')
+        .then(response => {
+          if (!response.ok) {
+            throw new Error('Resume file not found');
+          }
+          return response.blob();
+        })
+        .then(blob => {
+          // Create a blob URL and trigger download
+          const url = window.URL.createObjectURL(blob);
+          const link = document.createElement('a');
+          link.href = url;
+          link.download = 'Resume of Gan Zhen Yueh.pdf';
+          document.body.appendChild(link);
+          link.click();
+          
+          // Clean up
+          window.URL.revokeObjectURL(url);
+          document.body.removeChild(link);
+          
+          toast({
+            title: "Download started",
+            description: "Your download should begin shortly."
+          });
+        })
+        .catch(error => {
+          console.error('Download error:', error);
+          toast({
+            variant: "destructive",
+            title: "Download failed",
+            description: "Could not download the resume. Please try again later."
+          });
+        });
+    } catch (error) {
+      console.error('Download error:', error);
+      toast({
+        variant: "destructive",
+        title: "Download failed",
+        description: "Could not download the resume. Please try again later."
+      });
+    }
   };
   
   return (
