@@ -25,12 +25,12 @@ const FloatingDownloadButton = () => {
   }, []);
   
   const handleDownload = () => {
-    // Use window.open for direct download to avoid "interrupt:no file" error
-    window.open('/assets/Resume of Gan Zhen Yueh.pdf', '_blank');
+    // Redirect to the external resume link
+    window.open('https://resumeofganzhenyueh.tiiny.site', '_blank');
     
     toast({
-      title: "Download initiated",
-      description: "Your resume should open in a new tab."
+      title: "Redirecting to resume",
+      description: "Opening your resume in a new tab."
     });
   };
   
